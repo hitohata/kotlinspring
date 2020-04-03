@@ -1,0 +1,17 @@
+version: "2.1"
+
+networks:
+  kotlinspring_debug:
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile_debug
+    ports:
+      - 8888:8080
+    networks:
+      - kotlinspring_debug
+    command: java -Djava.security.egd=file:/dev/./urandom -jar /work/app.jar
+
+
