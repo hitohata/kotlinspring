@@ -1,5 +1,5 @@
 FROM openjdk:8-jdk-alpine
-VOLUME /tmp
+RUN apk add gradle
 RUN mkdir /work
 COPY . /work
 WORKDIR /work
